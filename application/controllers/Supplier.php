@@ -104,6 +104,8 @@ class Supplier extends CI_Controller
     {
         $pid = $this->input->get('id');
 
+
+
         $data['customer'] = $this->supplier->details($pid);
         $data['customergroup'] = $this->supplier->group_info($pid);
         $data['customergrouplist'] = $this->supplier->group_list();
@@ -112,6 +114,8 @@ class Supplier extends CI_Controller
         $this->load->view('fixed/header', $head);
         $this->load->view('supplier/edit', $data);
         $this->load->view('fixed/footer');
+        // commit test
+
 
     }
 
