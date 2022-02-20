@@ -114,6 +114,7 @@ class Supplier extends CI_Controller
         $this->load->view('fixed/header', $head);
         $this->load->view('supplier/edit', $data);
         $this->load->view('fixed/footer');
+        
 
     }
 
