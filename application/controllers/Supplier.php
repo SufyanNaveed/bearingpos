@@ -104,6 +104,8 @@ class Supplier extends CI_Controller
     {
         $pid = $this->input->get('id');
 
+
+
         $data['customer'] = $this->supplier->details($pid);
         $data['customergroup'] = $this->supplier->group_info($pid);
         $data['customergrouplist'] = $this->supplier->group_list();
