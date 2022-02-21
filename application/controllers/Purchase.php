@@ -193,9 +193,9 @@ class Purchase extends CI_Controller
                 if ($product_id[$key] > 0) {
                     if ($this->input->post('update_stock') == 'yes') {
 
-                        //$this->db->set('qty', "qty+$amt", FALSE);
-                        //$this->db->where('pid', $product_id[$key]);
-                        //$this->db->update('geopos_products');
+                        $this->db->set('qty', "qty+$amt", FALSE);
+                        $this->db->where('pid', $product_id[$key]);
+                        $this->db->update('geopos_products');
                     }
                     $itc += $amt;
                 }
@@ -446,9 +446,9 @@ class Purchase extends CI_Controller
 
             if ($this->input->post('update_stock') == 'yes') {
                 $amt = intval($product_qty[$key]) - @intval($old_product_qty[$key]);
-                //$this->db->set('qty', "qty+$amt", FALSE);
-                //$this->db->where('pid', $product_id[$key]);
-                //$this->db->update('geopos_products');
+                $this->db->set('qty', "qty+$amt", FALSE);
+                $this->db->where('pid', $product_id[$key]);
+                $this->db->update('geopos_products');
             }
             $flag = true;
 
