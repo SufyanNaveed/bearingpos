@@ -43,6 +43,17 @@
                 <div class="form-group row">
 
                     <label class="col-sm-2 col-form-label"
+                           for="purchase_price"><?php echo $this->lang->line('Purchase price') ?>*</label>
+
+                    <div class="col-sm-6">
+                        <input type="text" placeholder="purchase price"
+                               class="form-control margin-bottom  required" name="purchase_price"
+                               value="<?php echo $product['purchasePrice'] ?>">
+                    </div>
+                </div>
+                <div class="form-group row">
+
+                    <label class="col-sm-2 col-form-label"
                            for="product_cat"><?php echo $this->lang->line('Product Category') ?>*</label>
 
                     <div class="col-sm-6">

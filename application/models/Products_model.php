@@ -341,8 +341,14 @@ class Products_model extends CI_Model
         }
     }
 
-    public function edit($pid, $catid, $warehouse, $product_name, $product_code, $product_price, $factoryprice, $taxrate, $disrate, $product_qty, $product_qty_alert, $product_desc, $image, $unit, $barcode, $code_type, $product_size, $product_location, $product_country)
+    public function edit($pid, $catid, $warehouse, $product_name, $product_code, $product_price, $factoryprice, $taxrate, $disrate, $product_qty, $product_qty_alert, $product_desc, $image, $unit, $barcode, $code_type, $product_size, $product_location, $product_country,$purchase_price)
     {
+        $pruchase_price_data = array(
+        'price' => $purchase_price,
+);
+$this->db->set($pruchase_price_data);
+                $this->db->where('pid', $pid);
+                $this->db->update('geopos_purchase_items');
         $this->db->select('qty');
         $this->db->from('geopos_products');
         $this->db->where('pid', $pid);
@@ -373,11 +379,6 @@ class Products_model extends CI_Model
                     'product_location' => $product_location,
                     'product_country' => $product_country
                 );
-
-
-                $this->db->set($data);
-                $this->db->where('pid', $pid);
-
                 if ($this->db->update('geopos_products')) {
                     if ($r_n['qty'] != $product_qty) {
                         $m_product_qty = $product_qty - $r_n['qty'];

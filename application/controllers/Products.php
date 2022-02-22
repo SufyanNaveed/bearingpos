@@ -250,6 +250,8 @@ class Products extends CI_Controller
         $this->db->from('geopos_products');
         $this->db->where('pid', $pid);
         $query = $this->db->get();
+        $supplierDetails = $this->products->supplier_ware($pid);
+        $data['purchasePrice'] = 'SAR ' . $supplierDetails['purchaseprice'];
         $data['product'] = $query->row_array();
         $cid = $data['product']['product_country'];
         $data['units'] = $this->products->units();
@@ -269,6 +271,7 @@ class Products extends CI_Controller
     public function editproduct()
     {
         $pid = $this->input->post('pid');
+        $purchase_price = $this->input->post('purchase_price');
         $product_name = $this->input->post('product_name', true);
         $catid = $this->input->post('product_cat');
         $warehouse = $this->input->post('product_warehouse');
@@ -288,7 +291,7 @@ class Products extends CI_Controller
         $barcode = $this->input->post('barcode');
         $code_type = $this->input->post('code_type');
         if ($pid) {
-            $this->products->edit($pid, $catid, $warehouse, $product_name, $product_code, $product_price, $factoryprice, $taxrate, $disrate, $product_qty, $product_qty_alert, $product_desc, $image, $unit, $barcode, $code_type, $product_size, $product_location, $product_country);
+            $this->products->edit($pid, $catid, $warehouse, $product_name, $product_code, $product_price, $factoryprice, $taxrate, $disrate, $product_qty, $product_qty_alert, $product_desc, $image, $unit, $barcode, $code_type, $product_size, $product_location, $product_country,$purchase_price);
         }
 
 
