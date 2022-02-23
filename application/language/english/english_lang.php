@@ -197,6 +197,7 @@ $lang['View'] = "View";
 $lang['Public View'] = "Public View";
 $lang['Our Info'] = "Our Info";
 $lang['Price'] = " Price";
+$lang['Purchase Price'] = "Purchase Price";
 $lang['SubTotal'] = "SubTotal";
 $lang['Description'] = "Description";
 $lang['Summary'] = "Summary";
