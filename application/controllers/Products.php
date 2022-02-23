@@ -251,7 +251,7 @@ class Products extends CI_Controller
         $this->db->where('pid', $pid);
         $query = $this->db->get();
         $supplierDetails = $this->products->supplier_ware($pid);
-        $data['purchasePrice'] = 'SAR ' . $supplierDetails['purchaseprice'];
+        $purchasePrice = 'SAR ' . $supplierDetails['purchaseprice'];
         $data['product'] = $query->row_array();
         $cid = $data['product']['product_country'];
         $data['units'] = $this->products->units();
