@@ -39,20 +39,28 @@
                             <?php } ?>
                         </td>
                     </tr>
-                    <tr class="item mfill">
+                    <!-- <tr class="item mfill">
                     <td style="width:50px;font-size:20px;border:none; background:none"> &nbsp; </td>
                         <td style="font-size:20px;border:none; background:none"><b> &nbsp;  </b></td>
                         <td style="font-size:20px;border:none; background:none"> &nbsp; </td>
                         <td style="font-size:20px;border:none; background:none"><b> &nbsp; </b></td>
                         <td style="width:350px;font-size:20px;border:none; background:none"> &nbsp;</td>
                         <td style="width:80px;font-size:20px;border:none; background:none"> &nbsp; </td>
-                    </tr>
+                    </tr> -->
                     <tr class="item mfill">
-                    <td style="width:50px;font-size:20px;border:none; background:none"> &nbsp; </td>
+                        <td style="width:50px;font-size:20px;border:none; background:none"> &nbsp; </td>
                         <td style="font-size:20px"> &nbsp; <b><?= $general['title'] . ' ' . $this->lang->line('Date') ?>  </b></td>
                         <td style="font-size:20px"> &nbsp; <?php echo dateformat($invoice['invoicedate']) ?></td>
                         <td style="font-size:20px"><b> &nbsp; <?= 'Customer Name' ?> </b></td>
                         <td style="font-size:20px"> &nbsp; <?php echo $invoice['name'] ?></td>
+                        <td style="width:80px;font-size:20px;border:none; background:none"> &nbsp; </td>
+                    </tr>
+                    <tr class="item mfill">
+                        <td style="width:50px;font-size:20px;border:none; background:none"> &nbsp; </td>
+                        <td style="font-size:20px"> &nbsp; <b><?= 'Phone No' ?>  </b></td>
+                        <td style="font-size:20px"> &nbsp; <?php echo $invoice['phone'] ?></td>
+                        <td style="font-size:20px"><b> &nbsp; <?= 'Address' ?> </b></td>
+                        <td style="font-size:20px"> &nbsp; <?php echo $invoice['address'] ?></td>
                         <td style="width:80px;font-size:20px;border:none; background:none"> &nbsp; </td>
                     </tr>
                 </table>
